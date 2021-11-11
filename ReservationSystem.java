@@ -7,7 +7,7 @@ public class ReservationSystem {
 	public static void main(String[] args)
 	        throws IOException
 	   { 
-	      ReservationMenu menu = new ReservationMenu();
-	      menu.run();
+	      ReservationMenu load = new ReservationMenu();
+	      load.run();
 	   }
 }
