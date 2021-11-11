@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import HotelReservationSystem.Reservation;
 import HotelReservationSystem.ReservationDate;
 
-public class ReservationCalendar {
-	private ArrayList<ReservationMenu> reservations;
+public class Calendar {
+	private ArrayList<Reservation> reservations;
 	
 	public void add(Reservation r) {
 		reservations.add(r);
@@ -23,9 +23,9 @@ public class ReservationCalendar {
 	   }
 	   
 	   public void cancel(Reservation resNum) {
-		   for(Reservation reserv:reservations) {
+		   for(Reservation ReservationNumber:reservations) {
 			   if (ReservationNumber.equals(resNum)) {
-			   reservations.remove(reserv);
+			   reservations.remove(ReservationNumber);
 			  }
 			   System.out.print("This reservation does not exist");
 		   }
