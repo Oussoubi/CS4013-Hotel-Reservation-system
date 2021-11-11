@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import HotelReservationSystem.Reservation;
 import HotelReservationSystem.ReservationDate;
 
-public class Calendar {
+public class ReservationCalendar {
 	private ArrayList<Reservation> reservations;
 	
 	public void add(Reservation r) {
