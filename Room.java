@@ -7,8 +7,12 @@ import java.util.Arrays;
 
 public class Room {
 	ArrayList<String> room = new ArrayList<String>();
-	private int star, noOfRooms;
-	private String roomType;
+	
+    Scanner input = new Scanner(System.in);
+    star
+    roomType
+
+    private int noOfRooms;
 	private boolean isOccupied;
 
 
@@ -23,7 +27,15 @@ public class Room {
 		this.isOccupied = isOccupied;
 
 		if(star==5){
+            
+		} else if(star==4){
+            
+		} else if(star==3){
+            
+		} else if(star>5 || star<3){
+            
+		}else{
 
-		}
+        }
 	}
 }
