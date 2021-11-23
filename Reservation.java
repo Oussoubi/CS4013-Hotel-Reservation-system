@@ -1,56 +1,57 @@
-import java.io.PrintWriter;
-import java.time.LocalDate;
-import java.util.Scanner;
-
 public class Reservation implements Comparable<Reservation> {
-    private int ReservationNumber;
-    private String customerName;
-    private String ReservationType;
-    private int CheckInDate;
-    private int CheckOutDate;
+    private int reservationNumber;
+    private String reservationName;
+    private String reservationType;
+    private int checkInDate;
+    private int checkOutDate;
+    private int NoOfRooms;
+    private String RoomType;
+    private int NoOfPeople;
     private double Cost;
+
 
     public Reservation() {
 
     }
 
-    public Reservation(int ReservationNumber,String customerName,String ReservationType,
-        LocalDate day,int CheckInDate,int CheckOutDate) {
-        this.ReservationNumber = ReservationNumber;
-        this.customerName = customerName;
-        this.ReservationType = ReservationType;
-        this.CheckInDate = CheckInDate;
-        this.CheckOutDate = CheckOutDate;
+    public Reservation(int reservationNumber,String reservationName,String reservationType,
+    		int checkInDate,int checkOutDate,int NoOfRooms,String RoomType,int NoOfPeople,double Cost) {
+        this.reservationNumber = reservationNumber;
+        this.reservationName = reservationName;
+        this.reservationType = reservationType;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.NoOfRooms = NoOfRooms;
+        this.RoomType = RoomType;
+        this.NoOfPeople = NoOfPeople;
+        this.Cost = Cost;
     }
 
-    public void readFrom(Scanner input) {
-        ReservationNumber = input.nextInt();
-        customerName = input.next();
-        CheckInDate = input.nextInt();
-        CheckOutDate = input.nextInt();
-    }
-
-    public void writeTo(PrintWriter output) {
-        output.print(ReservationNumber);
-        output.print(" ");
-        output.print(customerName);
-        output.print(" ");
-        output.print(CheckInDate);
-        output.print(" ");
-        output.print(CheckOutDate);
-    }
-
-    public String toString() {
-        return ReservationNumber + ": " +
-               CheckInDate + "-" + CheckOutDate;
-    }
-
-    @Override
-    public int compareTo(Reservation o) {
-        if(CheckOutDate <= o.CheckInDate)
-            return -1;
-        else if(CheckInDate >= o.CheckOutDate)
-            return 1;
-        return 0;
-    }
+    public int getreservationNumber() {
+        return reservationNumber;
+      }
+    public String getreservationName() {
+        return reservationName;
+      }
+    public String getreservationType() {
+        return reservationType;
+      }
+    public int getcheckInDate() {
+        return checkInDate;
+      }
+    public int getcheckOutDate() {
+        return checkOutDate;
+      }
+    public int getNoOfRooms() {
+        return NoOfRooms;
+      }
+    public String getRoomType() {
+        return RoomType;
+      }
+    public int getNoOfPeople() {
+        return NoOfPeople;
+      }
+    public double getCost() {
+        return Cost;
+      }
 }
