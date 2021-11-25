@@ -54,4 +54,32 @@ public class Reservation implements Comparable<Reservation> {
     public double getCost() {
         return Cost;
       }
+    
+    public void setReservationNumber(int newReservationNumber) {
+        this.reservationNumber = newReservationNumber;
+      }
+    public void setReservationName(String ReservationName) {
+        this.reservationName = ReservationName;
+      }
+    public void setReservationType(String ReservationType) {
+        this.reservationType = ReservationType;
+      }
+    public void setCheckInDate(int CheckInDate) {
+        this.checkInDate = CheckInDate;
+      }
+    public void setCheckOutDate(int CheckOutDate) {
+        this.checkOutDate = CheckOutDate;
+      }
+    public void setNoOfRooms(int NoOfRooms) {
+        this.noOfRooms = NoOfRooms;
+      }
+    public void setRoomType(String RoomType) {
+        this.roomType = RoomType;
+      }
+    public void setNoOfPeople(int NoOfPeople) {
+        this.noOfPeople = NoOfPeople;
+      }
+    public void setCost(double Cost) {
+        this.cost = Cost;
+      }
 }
