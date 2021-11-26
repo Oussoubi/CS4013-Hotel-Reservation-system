@@ -1,4 +1,4 @@
-package HotelReservation;
+package HotelReservationSystem;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -35,34 +35,68 @@ public class ReservationMenu {
 
 			// If user inputs A = Add a Reservation
 			if (userInput.equals("A")) {
-				System.out.println("Booking Details:");
-				System.out.println("What star rating hotel are you wanting to book? (5, 4, or 3?)"); // need to get the
-																										// star rating
-																										// to specify
-																										// the hotel
-																										// type
-				int starRating = input.nextInt();
-				Reservation star = new Reservation(starRating);
-
-				System.out
-						.println("What is your desired Check-In Date and Check-Out Date (example 12/12/21 - 14/12/21)");
-				String dateLine = input.nextLine(); // takes answer as a String
-				Reservation a = new Reservation(dateLine); // this line is then split into date
-
-				bookings.add(a); // added to bookings
-
-				System.out.println("Number of People?");
-				int numOfPersons = input.nextInt();
-				Reservation n = new Reservation(numOfPersons);
-				room.add(n);
+				System.out.println("Booking Details:"
+						+ "\nWhat star rating hotel do you want to stay at? (5, 4, 3)");
+				int hotelstar = input.nextInt();		
+				
+				System.out.println("What is your name?");
+				String bookingName = input.nextLine();
+				
 
 				System.out.println("What option of payment would you like:\n (AP) Advanced Purchase (non-refundable) or"
 						+ "(S) Standard (refundable upto 48hours before stay)?");
 				String resType = input.nextLine();
-				room.add(a);
+				
+				System.out.println("What is your desired Check-In Date and Check-Out Date (example 12/12/21)");
+				String checkIn = input.nextLine(); // takes answer as a String
+				
+
+				System.out.println("What is your desired Check-Out Date (example 12/12/21)");
+				String checkOut = input.nextLine();
+				
+				System.out.println("How many rooms do you want to book?");
+				int noOfRooms = input.nextInt();
+				
+				//this part needs to be changed into a method in Room class of getRoomType based on the hotel star 
+				// ** will leave here but needs to be removed **
+				// ****************
+								
+						if(hotelstar == 5) {
+							System.out.println("What type of room do you require?\nDeluxe Double (DD), Deluxe Twin  (DT), Deluxe Single (DS), Deluxe Family (DF)");
+							String roomType = input.nextLine();
+							return;
+						
+						}
+						
+						// 4 star
+						if(hotelstar == 4) {
+							System.out.println("What type of room do you require?\nExecutive Double (ED), Executive Twin (ET), Executive Single (ES)");
+							String roomType = input.nextLine();
+							return;
+		
+						}
+						
+						// 3 star
+						if(hotelstar == 3) {
+							System.out.println("What type of room do you require?\nClassic Double (CD), Classic Twin (CT), Classic Single (CS)");
+							String roomType = input.nextLine();
+							return;
+						}
+						
+
+						// ****************
+				
+				System.out.println("Number of People?");
+				int numOfPersons = input.nextInt();
+				
+				// creating a reservation object with all the user inputs 
+				Reservation res = new Reservation(hotelstar, bookingName, resType, checkIn, checkOut, noOfRooms, roomType, numOfPersons);
+				
 
 				// Cancel a Reservation
 			}
+			
+			
 			if (userInput.equals("C")) {
 				System.out.println("Cancel a Reservation - please supply Reservation ID number: )");
 				int resNum = input.nextInt();
