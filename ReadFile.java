@@ -4,13 +4,21 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/** 
+ *  
+ * @author Niamh Dunlea - 21145059
+ *
+ */
 public class ReadFile {
 
 	private String fileInformation[][] = new String[20][20]; // 2D array to store the information in csv file
 
-	
-	
-	// read the file and split up the information within it
+	/**
+	 * read the data from the csv file and store in a 2D array
+	 * 
+	 * @return
+	 * @throws FileNotFoundException
+	 */
 	public String readFile() throws FileNotFoundException {
 
 		File file = new File(
@@ -23,7 +31,7 @@ public class ReadFile {
 		int r = 0;
 
 		// Read data from a file
-		while (fileData.hasNext()) { // while there is always another line 
+		while (fileData.hasNext()) { // while there is always another line
 			row = fileData.nextLine();
 			fileInformation[r] = row.split(","); // add to array where it split by ,
 			r++;
@@ -33,6 +41,7 @@ public class ReadFile {
 		return fileInformation.toString();
 	}
 
+	// used to test the array information
 	public String toString() {
 		String info = "";
 		for (int i = 0; i < fileInformation.length; i++) {
