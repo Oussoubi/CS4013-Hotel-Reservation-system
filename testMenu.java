@@ -2,6 +2,12 @@ package HotelReservationSystem;
 
 import java.util.Scanner;
 
+/** 
+ * 
+ * @author Niamh Dunlea - 21145059
+ * testing the menu to read in the users input 
+ */
+
 public class testMenu {
 
 	static Scanner input = new Scanner(System.in); // setup the scanner for user input
