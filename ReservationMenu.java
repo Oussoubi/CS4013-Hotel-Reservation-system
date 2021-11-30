@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 /**
+ * @author Niamh Dunlea - 21145059
  * Menu for the Reservation System.
  */
 
@@ -65,7 +66,7 @@ public class ReservationMenu {
 
 				// creating a reservation object with all the user inputs
 				Reservation res = new Reservation(reservationNumber, reservationName, reservationType, checkInDate,
-						checkOutDate, NoOfRooms, RoomType, NoOfPeople, Room.getRates());
+						checkOutDate, NoOfRooms, RoomType, NoOfPeople, Room.getRates(RoomType, NoOfRooms));
 
 				
 			}
@@ -157,25 +158,5 @@ public class ReservationMenu {
 
 		}
 		return resNum;
-	}
-
-	/**
-	 * gets the user input and makes it uppercase to be able to compare 
-	 */
-	private Reservation getChoice(ArrayList<Reservation> choices) {
-
-		if (choices.size() == 0)
-			return null;
-		while (true) {
-			char c = 'A';
-			for (Reservation choice : choices) {
-				System.out.println(c + ") " + choice.toString());
-				c++;
-			}
-			String userIn = input.nextLine();
-			int n = userIn.toUpperCase().charAt(0) - 'A';
-			if (0 <= n && n < choices.size())
-				return choices.get(n);
-		}
 	}
 }
