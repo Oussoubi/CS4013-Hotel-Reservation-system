@@ -1,48 +1,26 @@
 package GP;
 
-import java.time.LocalDate;
-
 public class Reservation {
     private int reservationNumber;
     private String reservationName;
-    private LocalDate day;
+    private String day;
     private int startHour;
     private int endHour;
-    private boolean reservationType;
-    private int checkInDate;
-    private int checkOutDate;
+    private String reservationType;
+    private String checkInDate;
+    private String checkOutDate;
     private int noOfRooms;
     private String roomType;
     private int noOfPeople;
     private double cost;
-
-
+    
     /*
 	Creates A new Reservation Object from user Input.
 	*/
-    public Reservation(String reservationName,LocalDate day,int startHour,int endHour,boolean reservationType,
-    		int checkInDate,int checkOutDate,int noOfRooms,String roomType,int noOfPeople) {
+    public Reservation(int reservationNumber, String reservationName,String day,int startHour,int endHour,String reservationType,
+    		String checkInDate,String checkOutDate,int noOfRooms,String roomType,int noOfPeople) {
     	
-        this.reservationNumber = (int) (Math.random()*1000);
-        this.reservationName = reservationName;
-        this.day = day;
-        this.startHour = startHour;
-        this.endHour = endHour;
-        this.reservationType = reservationType;
-        this.checkInDate = checkInDate;
-        this.checkOutDate = checkOutDate;
-        this.noOfRooms = noOfRooms;
-        this.roomType = roomType;
-        this.noOfPeople = noOfPeople;
-    }
-    
-    /*
-	Creates A new Reservation Object from res.csv file. The Trick here is to get the Number from the csv file so that the user can cancel with the same number.
-	*/
-    public Reservation(int reservationNumber,String reservationName,LocalDate day,int startHour,int endHour,boolean reservationType,
-    		int checkInDate,int checkOutDate,int noOfRooms,String roomType,int noOfPeople) {
-    	
-        this.reservationNumber = reservationNumber;
+        this.reservationNumber = (int) (Math.random()*10000000);
         this.reservationName = reservationName;
         this.day = day;
         this.startHour = startHour;
@@ -58,13 +36,14 @@ public class Reservation {
     /*
 	Creates a new reservation.
 	*/
-    public Reservation createRes(int reservationNumber,String reservationName,LocalDate day,int startHour,int endHour,boolean reservationType,
-    		int checkInDate,int checkOutDate,int noOfRooms,String roomType,int noOfPeople){
-		Reservation newRes = new Reservation(reservationNumber, reservationName, day, startHour, endHour, reservationType, checkInDate, checkOutDate, noOfRooms, roomType, noOfPeople);
-		return newRes;
+    public Reservation createRes(int reservationNumber,String reservationName,String day,int startHour,int endHour,String reservationType,
+    		String checkInDate,String checkOutDate,int noOfRooms,String roomType,int noOfPeople){
+    	Reservation newRes= new Reservation(reservationNumber, reservationName, day, startHour, endHour, reservationType,
+        		 checkInDate, checkOutDate, noOfRooms, roomType, noOfPeople);
+    	return newRes;
 	}
     
-    public LocalDate getDate() { 
+    public String getDate() { 
     	return day; 
       }
 
@@ -74,7 +53,7 @@ public class Reservation {
     public String getReservationName() {
         return reservationName;
       }
-    public boolean getReservationType() {
+    public String getReservationType() {
         return reservationType;
       }
     public int getStartHour() {
@@ -83,10 +62,10 @@ public class Reservation {
     public int getEndHour() {
     	return endHour;
     }
-    public int getCheckInDate() {
+    public String getCheckInDate() {
         return checkInDate;
       }
-    public int getCheckOutDate() {
+    public String getCheckOutDate() {
         return checkOutDate;
       }
     public int getNoOfRooms() {
