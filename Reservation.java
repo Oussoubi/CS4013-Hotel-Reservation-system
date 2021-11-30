@@ -84,44 +84,5 @@ public class Reservation {
     public void setCost(double Cost) {
 		this.cost = Cost;
 	}
-    
-    
-    
-    
-    /*
-    
-    @Override
-    public int compareTo(Reservation o) {
-        if(day.isBefore(o.day))
-            return -1;
-        if(day.isAfter(o.day))
-            return 1;
-        if(endHour <= o.startHour)
-            return -1;
-        else if(startHour >= o.endHour)
-            return 1;
-        return 0;
-    }
-    
-    public cancelReservation(int resNum) {
-    	if(resNum == reservationNumber) {
-    		System.out.println("Do you wish to cancel this appointment? : " + reservation)     //reservation is an arraylist containing the day of the booking
-    		System.out.println("Yes (Y) or No (N)");
-    		Scanner input = new Scanner(System.in);
-    		String answer = input.nextLine().toUpperCase();
-    		if(answer.equals("YES") || answer.equals("Y")) {
-    			reservation.clear();
-    			System.out.println("Appointment successfully cancelled");
-    		}else if(answer.equals("NO") || answer.equals("N")) {
-    			System.out.println("Return to menu");
-    			//menu class gets called here
-    		}else {
-    			System.out.println("Please ensure you answered with YES/Y or NO/N");
-    			String correction = input.nextLine().toUpperCase();
-    		}
-    	}
-    }
-    
-    */
-    
+  
 }
