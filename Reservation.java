@@ -4,8 +4,6 @@ public class Reservation {
     private int reservationNumber;
     private String reservationName;
     private String day;
-    private int startHour;
-    private int endHour;
     private String reservationType;
     private String checkInDate;
     private String checkOutDate;
@@ -17,14 +15,12 @@ public class Reservation {
     /*
 	Creates A new Reservation Object from user Input.
 	*/
-    public Reservation(int reservationNumber, String reservationName,String day,int startHour,int endHour,String reservationType,
+    public Reservation(int reservationNumber, String reservationName,String day,String reservationType,
     		String checkInDate,String checkOutDate,int noOfRooms,String roomType,int noOfPeople) {
     	
         this.reservationNumber = (int) (Math.random()*10000000);
         this.reservationName = reservationName;
         this.day = day;
-        this.startHour = startHour;
-        this.endHour = endHour;
         this.reservationType = reservationType;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
@@ -36,9 +32,9 @@ public class Reservation {
     /*
 	Creates a new reservation.
 	*/
-    public Reservation createRes(int reservationNumber,String reservationName,String day,int startHour,int endHour,String reservationType,
+    public Reservation createRes(int reservationNumber,String reservationName,String day,String reservationType,
     		String checkInDate,String checkOutDate,int noOfRooms,String roomType,int noOfPeople){
-    	Reservation newRes= new Reservation(reservationNumber, reservationName, day, startHour, endHour, reservationType,
+    	Reservation newRes= new Reservation(reservationNumber, reservationName, day, reservationType,
         		 checkInDate, checkOutDate, noOfRooms, roomType, noOfPeople);
     	return newRes;
 	}
@@ -56,12 +52,6 @@ public class Reservation {
     public String getReservationType() {
         return reservationType;
       }
-    public int getStartHour() {
-    	return startHour;
-    }
-    public int getEndHour() {
-    	return endHour;
-    }
     public String getCheckInDate() {
         return checkInDate;
       }
