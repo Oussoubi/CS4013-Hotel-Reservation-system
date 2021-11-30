@@ -3,6 +3,7 @@ package HotelReservationSystem;
 import java.io.IOException;
 
 /**
+ * @author Niamh Dunlea - 21145059
  * System that manages and runs the Reservations
  *
  */
